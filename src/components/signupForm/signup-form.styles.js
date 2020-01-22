@@ -25,7 +25,9 @@ export const ControlsContainer = styled.div`
 `;
 
 export const GetStartedButton = styled.button`
-	background-color: #fff;
+	margin-top: 2rem;
+	background-color: #318ffb;
+	color: #fff;
 	width: 100%;
 	cursor: pointer;
 	font-size: 1.8rem;
@@ -50,11 +52,12 @@ export const ControlButtonBack = styled.button`
 export const ControlButtonNext = styled.button`
 	cursor: pointer;
 	padding: 1rem 3rem;
-	background-color: #fff;
+	background-color: #318ffb;
+	color: #fff;
 	border: none;
 	font-family: inherit;
 	font-size: 1.8rem;
-	font-weight: lighter;
+	// font-weight: lighter;
 `;
 
 export const InputContainer = styled.input`

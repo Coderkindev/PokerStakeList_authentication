@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { NavLink, ButtonNavLink } from './navbar.styles';
+
 const Navbar = () => {
 	return (
 		<nav
@@ -27,10 +29,10 @@ const Navbar = () => {
 				}}
 			>
 				<li>
-					<Link to="/signin">Sign in</Link>
+					<NavLink to="/signin">Sign in</NavLink>
 				</li>
 				<li>
-					<Link to="/signup">Sign up</Link>
+					<ButtonNavLink to="/signup">Sign up</ButtonNavLink>
 				</li>
 			</ul>
 		</nav>

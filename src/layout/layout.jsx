@@ -3,27 +3,15 @@ import React from 'react';
 import Navbar from '../components/navbar/navbar';
 import Footer from '../components/footer/footer';
 
+import { MainContainer, LayoutContainer } from './layout.styles';
+
 const Layout = ({ children }) => {
 	return (
-		<div
-			style={{
-				width: '100%',
-				minHeight: '100vh'
-			}}
-		>
+		<LayoutContainer>
 			<Navbar />
-			<main
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center'
-					// paddingTop: '15rem'
-				}}
-			>
-				{children}
-			</main>
+			<MainContainer>{children}</MainContainer>
 			<Footer />
-		</div>
+		</LayoutContainer>
 	);
 };
 
