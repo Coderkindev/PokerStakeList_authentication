@@ -1,16 +1,52 @@
 import React from 'react';
 
-const UserInfo = ({ step, setStep, firstname }) => {
+import {
+	Container,
+	Header,
+	ControlsContainer,
+	ControlButtonBack,
+	ControlButtonNext,
+	InputContainer,
+	BoldWord
+} from '../signup-form.styles';
+
+const UserInfo = ({ step, setStep, firstname, ...otherprops }) => {
 	return (
-		<div>
-			<h2>Nice to meet you {firstname}, now your user details.</h2>
-			<input type="text" placeholder="Email" />
-			<input type="text" placeholder="Username" />
-			<input type="text" placeholder="Password" />
-			<input type="text" placeholder="Confirm password" />
-			<button onClick={() => setStep(step - 1)}>Back</button>
-			<button onClick={() => setStep(step + 1)}>Next</button>
-		</div>
+		<Container>
+			<Header>
+				Nice to meet you <BoldWord>{firstname}</BoldWord>
+				<br />
+				Now let's set up your <BoldWord>user</BoldWord> registration
+			</Header>
+			<InputContainer
+				type="email"
+				placeholder="E-mail"
+				value={otherprops.email}
+				onChange={(e) => otherprops.setEmail(e.target.value)}
+			/>
+			<InputContainer
+				type="text"
+				placeholder="Username"
+				value={otherprops.username}
+				onChange={(e) => otherprops.setUsername(e.target.value)}
+			/>
+			<InputContainer
+				type="password"
+				placeholder="Password"
+				value={otherprops.password}
+				onChange={(e) => otherprops.setPassword(e.target.value)}
+			/>
+			<InputContainer
+				type="password"
+				placeholder="Confirm password"
+				value={otherprops.confirmPassword}
+				onChange={(e) => otherprops.setConfirmPassword(e.target.value)}
+			/>
+			<ControlsContainer>
+				<ControlButtonBack onClick={() => setStep(step - 1)}>Back</ControlButtonBack>
+				<ControlButtonNext onClick={() => setStep(step + 1)}>Next</ControlButtonNext>
+			</ControlsContainer>
+		</Container>
 	);
 };
 

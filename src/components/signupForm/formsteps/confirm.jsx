@@ -1,29 +1,44 @@
 import React from 'react';
 
+import {
+	Container,
+	Header,
+	ControlsContainer,
+	ControlButtonBack,
+	ControlButtonNext,
+	RowContainer,
+	BoldWord
+} from '../signup-form.styles';
+
 const Confirm = ({ firstname, lastname, email, username, step, setStep }) => {
 	return (
-		<div>
-			<h2>Thank you, now here is the summary</h2>
-			<div>
+		<Container>
+			<Header>
+				Almost <BoldWord>done</BoldWord>,
+				<br />
+				please check if everything's <BoldWord>perfect</BoldWord>.
+			</Header>
+			<RowContainer>
 				<p>First name:</p>
 				<span>{firstname}</span>
-			</div>
-			<div>
+			</RowContainer>
+			<RowContainer>
 				<p>Last name:</p>
 				<span>{lastname}</span>
-			</div>
-			<div>
+			</RowContainer>
+			<RowContainer>
 				<p>E-mail:</p>
 				<span>{email}</span>
-			</div>
-			<div>
+			</RowContainer>
+			<RowContainer>
 				<p>Username:</p>
 				<span>{username}</span>
-			</div>
-
-			<button onClick={() => setStep(step - 1)}>Back</button>
-			<button onClick={() => setStep(step + 1)}>Next</button>
-		</div>
+			</RowContainer>
+			<ControlsContainer>
+				<ControlButtonBack onClick={() => setStep(step - 1)}>Back</ControlButtonBack>
+				<ControlButtonNext onClick={() => setStep(step + 1)}>Next</ControlButtonNext>
+			</ControlsContainer>
+		</Container>
 	);
 };
 

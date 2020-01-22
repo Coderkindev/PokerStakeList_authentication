@@ -6,6 +6,8 @@ import UserInfo from './formsteps/user-info';
 import Confirm from './formsteps/confirm';
 import Success from './formsteps/success';
 
+import { Container, Header, GetStartedButton, BoldWord } from './signup-form.styles';
+
 const SignupForm = () => {
 	const [ step, setStep ] = useState(1);
 	const [ firstname, setFirstname ] = useState('');
@@ -18,11 +20,13 @@ const SignupForm = () => {
 	switch (step) {
 		case 1:
 			return (
-				<div>
-					<h1>Join our comunity!</h1>
-					<button onClick={() => setStep(step + 1)}>Join now!</button>
+				<Container>
+					<Header>
+						Join our <BoldWord>comunity!</BoldWord>
+					</Header>
+					<GetStartedButton onClick={() => setStep(step + 1)}>Click here to join!</GetStartedButton>
 					<Link to="/signin">Already have an account?</Link>
-				</div>
+				</Container>
 			);
 		case 2:
 			return (

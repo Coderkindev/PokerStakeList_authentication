@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Container, Header, ControlsContainer } from '../signup-form.styles';
+
 const Success = () => {
 	return (
-		<div>
-			<h2>Your signing up was successful!</h2>
+		<Container>
+			<Header>Your signing up was successful!</Header>
 			<p>You will be redirect in few seconds, if not,</p>
 			<Link to="/">Click here!</Link>
-		</div>
+		</Container>
 	);
 };
 

@@ -1,14 +1,41 @@
 import React from 'react';
 
-const PersonalInfo = ({ step, setStep }) => {
+import {
+	Container,
+	Header,
+	ControlsContainer,
+	ControlButtonBack,
+	ControlButtonNext,
+	InputContainer,
+	BoldWord
+} from '../signup-form.styles';
+
+const PersonalInfo = ({ step, setStep, firstname, setFirstname, lastname, setLastname }) => {
 	return (
-		<div>
-			<h2>Good morning, let introduce yourself!</h2>
-			<input type="text" placeholder="First name" />
-			<input type="text" placeholder="Last name" />
-			<button onClick={() => setStep(step - 1)}>Back</button>
-			<button onClick={() => setStep(step + 1)}>Next</button>
-		</div>
+		<Container>
+			<Header>
+				<BoldWord>Hello,</BoldWord>
+				<br />feel free to introduce <BoldWord>yourself</BoldWord>.
+			</Header>
+			<InputContainer
+				type="text"
+				placeholder="First name"
+				value={firstname}
+				onChange={(e) => setFirstname(e.target.value)}
+				required
+			/>
+			<InputContainer
+				type="text"
+				placeholder="Last name"
+				value={lastname}
+				onChange={(e) => setLastname(e.target.value)}
+				required
+			/>
+			<ControlsContainer>
+				<ControlButtonBack onClick={() => setStep(step - 1)}>Back</ControlButtonBack>
+				<ControlButtonNext onClick={() => setStep(step + 1)}>Next</ControlButtonNext>
+			</ControlsContainer>
+		</Container>
 	);
 };
 

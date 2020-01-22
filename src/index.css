@@ -11,6 +11,8 @@ html {
 }
 
 body {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
 	background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+	line-height: 1.5;
 }

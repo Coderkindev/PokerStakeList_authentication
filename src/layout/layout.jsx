@@ -1,21 +1,28 @@
 import React from 'react';
 
+import Navbar from '../components/navbar/navbar';
+import Footer from '../components/footer/footer';
+
 const Layout = ({ children }) => {
 	return (
 		<div
 			style={{
 				width: '100%',
-				height: '100vh',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				// justifyContent: 'space-between',
-				alignItems: 'center'
+				minHeight: '100vh'
 			}}
 		>
-			{/* <nav>Navbar</nav> */}
-			<main>{children}</main>
-			{/* <footer>Footer</footer> */}
+			<Navbar />
+			<main
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center'
+					// paddingTop: '15rem'
+				}}
+			>
+				{children}
+			</main>
+			<Footer />
 		</div>
 	);
 };
