@@ -11,6 +11,21 @@ import {
 } from '../signup-form.styles';
 
 const UserInfo = ({ step, setStep, firstname, ...otherprops }) => {
+	const handleClick = () => {
+		if (
+			otherprops.email === '' ||
+			otherprops.username === '' ||
+			otherprops.password === '' ||
+			otherprops.confirmPassword === ''
+		) {
+			return;
+		}
+
+		if (otherprops.password === otherprops.confirmPassword) {
+			setStep(step + 1);
+		}
+	};
+
 	return (
 		<Container>
 			<Header>
@@ -44,7 +59,7 @@ const UserInfo = ({ step, setStep, firstname, ...otherprops }) => {
 			/>
 			<ControlsContainer>
 				<ControlButtonBack onClick={() => setStep(step - 1)}>Back</ControlButtonBack>
-				<ControlButtonNext onClick={() => setStep(step + 1)}>Next</ControlButtonNext>
+				<ControlButtonNext onClick={handleClick}>Next</ControlButtonNext>
 			</ControlsContainer>
 		</Container>
 	);

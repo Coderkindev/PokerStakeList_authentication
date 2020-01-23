@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, Header, ControlsContainer } from '../signup-form.styles';
+import { Container, Header } from '../signup-form.styles';
 
 const Success = () => {
 	return (

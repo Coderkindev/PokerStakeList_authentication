@@ -1,41 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { NavLink, ButtonNavLink } from './navbar.styles';
+import { NavLink, ButtonNavLink, NavbarContainer, NavbarUl } from './navbar.styles';
 
 const Navbar = () => {
 	return (
-		<nav
-			style={{
-				display: 'flex',
-				width: '100%',
-				maxWidth: '94rem',
-				height: '8rem',
-				padding: '0 3rem',
-				justifyContent: 'space-between',
-				alignItems: 'center',
-				margin: '0 auto'
-			}}
-		>
+		<NavbarContainer>
 			<div>
 				<h1>LOGO</h1>
 			</div>
 
-			<ul
-				style={{
-					display: 'flex',
-					listStyle: 'none',
-					fontSize: '1.8rem'
-				}}
-			>
+			<NavbarUl>
 				<li>
 					<NavLink to="/signin">Sign in</NavLink>
 				</li>
 				<li>
 					<ButtonNavLink to="/signup">Sign up</ButtonNavLink>
 				</li>
-			</ul>
-		</nav>
+			</NavbarUl>
+		</NavbarContainer>
 	);
 };
 

@@ -66,8 +66,8 @@ export const InputContainer = styled.input`
 	border: none;
 	font-size: 1.8rem;
 	font-family: inherit;
-	border-bottom: 2px solid black;
-	margin-bottom: 1rem;
+	border-bottom: 2px solid #318ffb;
+	margin-bottom: 2rem;
 `;
 
 export const BoldWord = styled.span`font-weight: normal;`;

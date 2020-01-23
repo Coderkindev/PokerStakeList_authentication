@@ -11,6 +11,13 @@ import {
 } from '../signup-form.styles';
 
 const PersonalInfo = ({ step, setStep, firstname, setFirstname, lastname, setLastname }) => {
+	const handleClick = () => {
+		if (firstname === '' || lastname === '') {
+			return;
+		}
+		setStep(step + 1);
+	};
+
 	return (
 		<Container>
 			<Header>
@@ -33,7 +40,7 @@ const PersonalInfo = ({ step, setStep, firstname, setFirstname, lastname, setLas
 			/>
 			<ControlsContainer>
 				<ControlButtonBack onClick={() => setStep(step - 1)}>Back</ControlButtonBack>
-				<ControlButtonNext onClick={() => setStep(step + 1)}>Next</ControlButtonNext>
+				<ControlButtonNext onClick={handleClick}>Next</ControlButtonNext>
 			</ControlsContainer>
 		</Container>
 	);

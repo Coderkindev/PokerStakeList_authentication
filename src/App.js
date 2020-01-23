@@ -14,7 +14,7 @@ function App() {
 				<Route path="/signup">
 					<Signup />
 				</Route>
-				<Redirect from="*" to="/signin" />
+				<Redirect from="*" to="/signup" />
 			</Switch>
 		</BrowserRouter>
 	);
